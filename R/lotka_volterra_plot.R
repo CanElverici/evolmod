@@ -2,6 +2,7 @@
 #'
 #' @param results_df A data frame with the time points and the population of species 1 and species 2 at each time point.
 #' @return A plot of the Lotka-Volterra Competition Model.
+#' @importFrom ggplot2 ggplot aes geom_line theme_minimal labs
 #' @export
 #'
 #' @examples
@@ -15,10 +16,10 @@
 lotka_volterra_plot <- function(results_df) {
   long_df <- reshape2::melt(results_df, id.vars = "time", variable.name = "species", value.name = "population")
   # Create the plot
-  plot <- ggplot(data = long_df, aes(x = time, y = population, color = species)) +
-    geom_line(size = 1) +
-    theme_minimal() +
-    labs(
+  plot <- ggplot2::ggplot(data = long_df, ggplot2::aes(x = time, y = population, color = species)) +
+    ggplot2::geom_line(size = 1) +
+    ggplot2::theme_minimal() +
+    ggplot2::labs(
       title = "Lotka-Volterra Competition Model",
       x = "Time",
       y = "Population",
