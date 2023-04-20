@@ -13,7 +13,7 @@
 #' results_df <- lotka_volterra_competition(initial_conditions, parameters, time)
 
 lotka_volterra_competition <- function(initial_conditions, parameters, time) {
-    competition_model <- function(initial_conditions, parameters, time) {
+    competition_model <- function(time, state, parameters) {
         # Initial state variables
         x1 <- initial_conditions[1] # Species 1
         x2 <- initial_conditions[2] # Species 2
