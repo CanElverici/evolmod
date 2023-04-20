@@ -4,6 +4,7 @@
 #' @param parameters A vector of parameters for the model stating the intrinsic growth rate of species 1 (r1), the intrinsic growth rate of species 2 (r2), the carrying capacity of species 1 (K1), the carrying capacity of species 2 (K2), the competition coefficient of species 1 (alpha), and the competition coefficient of species 2 (beta).
 #' @param time A vector of time points to solve the model at
 #' @return A data frame with the time points and the population of species 1 and species 2 at each time point.
+#' @importFrom deSolve ode
 #' @export
 #'
 #' @examples
