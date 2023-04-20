@@ -34,7 +34,7 @@ lotka_volterra_competition <- function(initial_conditions, parameters, time) {
         return(list(c(dx1, dx2)))
     }
     #Solve the ODEs
-    results <- deSolve::ode(y = initial_conditions, times = time, func = competition_model, parms = parameters, method = "lsoda")
+    results <- deSolve::ode(y = initial_conditions, times = time, func = competition_model, parms = parameters)
 
     #Convert the output to a data frame
     results_df <- as.data.frame(results)
