@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' initial_conditions <- c(x1 = 50, x2 = 30)
-#' parameters <- c(r1 = 0.5, r2 = 0.3, K1 = 100, K2 = 200, alpha = 0.5, beta = 0.7)
+#' parameters <- c(r1 = 0.1, r2 = 0.1, K1 = 100, K2 = 200, alpha = 0.5, beta = 0.7)
 #' time <- seq(0, 100, by = 0.1)
 #' results_df <- lotka_volterra_competition(initial_conditions, parameters, time)
 
@@ -34,7 +34,7 @@ lotka_volterra_competition <- function(initial_conditions, parameters, time) {
         return(list(c(dx1, dx2)))
     }
     #Solve the ODEs
-    results <- deSolve::ode(y = initial_conditions, times = time, func = competition_model, parms = parameters)
+    results <- deSolve::ode(y = initial_conditions, times = time, func = competition_model, parms = parameters, method = "lsoda")
 
     #Convert the output to a data frame
     results_df <- as.data.frame(results)
