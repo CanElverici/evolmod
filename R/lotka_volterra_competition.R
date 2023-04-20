@@ -15,8 +15,8 @@
 lotka_volterra_competition <- function(initial_conditions, parameters, time) {
     competition_model <- function(time, state, parameters) {
         # Initial state variables
-        x1 <- initial_conditions[1] # Species 1
-        x2 <- initial_conditions[2] # Species 2
+        x1 <- state[1] # Species 1
+        x2 <- state[2] # Species 2
 
         # Parameters
         r1 <- parameters["r1"] # Intrinsic growth rate of species 1
