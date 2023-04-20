@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of evolmod is to …
+The goal of evolmod is to create basic evolutionary models for learning
+purposes.
 
 ## Installation
 
@@ -20,36 +21,13 @@ devtools::install_github("CanElverici/evolmod")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which makes a very basic lotka-volterra model:
 
 ``` r
 library(evolmod)
 ## basic example code
+initial_conditions <- c(x1 = 50, x2 = 30)
+parameters <- c(r1 = 0.1, r2 = 0.1, K1 = 100, K2 = 200, alpha = 0.5, beta = 0.7)
+time <- seq(0, 100, by = 0.1)
+results_df <- lotka_volterra_competition(initial_conditions, parameters, time)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
