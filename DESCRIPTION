@@ -1,5 +1,5 @@
 Package: evolmod
-Title: What the Package Does (One Line, Title Case)
+Title: Create Basic Evolutionary Models
 Version: 0.0.0.9000
 Authors@R: 
     person("Can", "Elverici", , "elverici.can@gmail.com", role = c("aut", "cre"),
