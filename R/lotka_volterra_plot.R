@@ -3,6 +3,7 @@
 #' @param results_df A data frame with the time points and the population of species 1 and species 2 at each time point.
 #' @return A plot of the Lotka-Volterra Competition Model.
 #' @importFrom ggplot2 ggplot aes geom_line theme_minimal labs
+#' @importFrom reshape2 melt
 #' @export
 #'
 #' @examples
