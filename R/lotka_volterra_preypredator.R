@@ -11,9 +11,9 @@
 #' initial_conditions <- c(x = 40, y = 9)
 #' parameters <- c(a = 0.1, b = 0.02, c = 0.0005, d = 0.3)
 #' time <- seq(0, 200, by = 0.1)
-#' results_df <- lotka_volterra_predator_prey(initial_conditions, parameters, time)
+#' results_df <- lotka_volterra_preypredator(initial_conditions, parameters, time)
 
-lotka_volterra_predator_prey <- function(initial_conditions, parameters, time) {
+lotka_volterra_preypredator <- function(initial_conditions, parameters, time) {
   predator_prey_model <- function(time, state, parameters) {
     # State variables
     x <- state[1] # Prey
